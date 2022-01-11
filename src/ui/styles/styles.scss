@@ -1,0 +1,41 @@
+body, html {
+	overflow: hidden;
+	margin: 0px;
+}
+
+.btn-flat {
+	border: #e6e6e6 1px solid;
+}
+
+#formColors {
+	fieldset {
+		border: #eee 1px solid;
+	}
+	legend {
+		font-size: x-small;
+		font-weight: 700;
+		color: rgba($color: #000, $alpha: 0.87);
+	}
+	label {
+		font-size: x-small;
+		color: rgba($color: #000, $alpha: 0.56);
+	}
+	.ColorHexInput {
+		background-color: #f6f6f6;
+		width: 80px;
+	}
+	.ColorOpacityInput {
+		background-color: #f6f6f6;
+		width: 32px;
+	}
+	.colorpicker {
+		appearance: none;
+		background: none;
+		border: #e6e6e6 1px solid;
+		border-bottom: #ddd 1px solid;
+		cursor: pointer;
+		height: 29px;
+		padding: 0;
+		width: 29px;
+	}
+}

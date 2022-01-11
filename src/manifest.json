@@ -1,0 +1,8 @@
+{
+  "name": "Kambi Duotone",
+  "id": "1050759679239421467",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "ui": "index.html"
+}

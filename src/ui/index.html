@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!-- https://materializecss.com/about.html -->
+		<link rel="stylesheet" href="./tmp/materialize.css">
+		<link rel="stylesheet" href="./tmp/styles.css">
+			
+	</head>
+	<body>
+		<div style="display: flex; justify-content: center; align-items: center; background: #F6F6F6; width: auto; height: 360px; padding: 16px;">
+			<svg id="theSvg" style="max-width: 100%; max-height: 100%;">
+					<linearGradient id="svgOverlay" x1="0%" y1="0%" x2="0%" y2="100%">
+						<stop id="overlayTop" offset="0%" stop-color="#000000aa" />
+						<stop id="overlayBottom" offset="100%" stop-color="#00000011" />
+					</linearGradient>
+					<filter id="svgDuotone">
+						<feColorMatrix type="matrix" result="grayscale"
+							values=".33 .33 .33 0 0
+									.33 .33 .33 0 0
+									.33 .33 .33 0 0
+									0 0 0 1 0" >
+						</feColorMatrix>
+						<feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+							<feFuncR id="feFuncR" type="table" tableValues=".996078431  .984313725"></feFuncR>
+							<feFuncG id="feFuncG" type="table" tableValues=".125490196  .941176471"></feFuncG>
+							<feFuncB id="feFuncB" type="table" tableValues=".552941176  .478431373"></feFuncB>
+						</feComponentTransfer>
+					</filter>
+					
+					<image id="svgImg" x="0" y="0" width="100%" height="100%" ></image>
+					<rect id="svgRect" x="0" y="0" width="100%" height="100%" fill="#F6F6F6"></rect>
+					<text id="svgText" x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" fill="#CCC">Select an image & click "ADD NEW IMAGE"</text>
+			</svg>
+		</div>
+		
+		<div style="display: flex; flex-direction: column; justify-content: space-between; height: 240px;">
+			<form id="formColors" style="display: inline-flex; justify-content: center; gap: 8px; padding-top: 16px;">
+				<fieldset>
+					<legend>Duotone Colors</legend>
+					<div>
+						<label for="inputDuotoneFromHex">Dark Color (HEX): </label><br/>
+						<div style="display: inline-flex; justify-content: center; gap: 4px;">
+							<input type="color" data-name="duotoneFromHex" name="duotoneFromHexPicker" id="inputDuotoneFromHexPicker" class="colorpicker">
+							<input type="text"  data-name="duotoneFromHex" name="duotoneFromHex" id="inputDuotoneFromHex" class="ColorHexInput">
+						</div>
+					</div>
+					<div>
+						<label for="inputDuotoneToHex">Light Color(HEX): </label><br/>
+						<div style="display: inline-flex; justify-content: center; gap: 4px;">
+							<input type="color" data-name="duotoneToHex" name="duotoneToHexPicker" id="inputDuotoneToHexPicker" class="colorpicker"> 
+							<input type="text" data-name="duotoneToHex" name="duotoneToHex" id="inputDuotoneToHex" class="ColorHexInput">   
+						</div>
+					</div>
+				</fieldset>
+				<fieldset style="display: inline-flex; gap: 4px;" >
+					<legend>Overlay Colors</legend>
+					<div>
+						<div>
+							<label for="inputOverlayTopHex">Top Color (HEX): </label><br/>
+							<div style="display: inline-flex; justify-content: center; gap: 4px;">
+								<input type="color" data-name="overlayTopHex" name="overlayTopHexPicker" id="inputOverlayTopHexPicker" class="colorpicker">
+								<input type="text" data-name="overlayTopHex" name="overlayTopHex" id="inputOverlayTopHex"  class="ColorHexInput">
+							</div>
+						</div>
+						<div>
+							<label for="inputOverlayBottomHex">Bottom Color (HEX): </label><br/>
+							<div style="display: inline-flex; justify-content: center; gap: 4px;">
+								<input type="color" data-name="overlayBottomHex" name="overlayBottomHexPicker" id="inputOverlayBottomHexPicker" class="colorpicker">
+								<input type="text" data-name="overlayBottomHex" name="overlayBottomHex" id="inputOverlayBottomHex" class="ColorHexInput">
+							</div>
+						</div>
+					</div>
+					<div>
+						<div>
+							<label for="inputOverlayTopOpacity">Opacity: </label><br/>
+							<input type="text" data-name="overlayTopOpacity" name="overlayTopOpacity" id="inputOverlayTopOpacity" class="ColorOpacityInput">
+						</div>
+						<div>
+							<label for="inputOverlayBottomOpacity">Opacity: </label><br/>
+							<input type="text" data-name="overlayBottomOpacity" name="overlayBottomOpacity" id="inputOverlayBottomOpacity" class="ColorOpacityInput">
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<div style="display: flex; gap: 10px; align-items: center; justify-content: space-between; height: 64px; border-top: #F6F6F6 1px solid; padding: 0 16px;">
+				<a  id="buttonAddImage" class="waves-effect waves-teal btn-flat">ADD NEW IMAGE</a>
+				<a  id="buttonSwapImage" class="waves-effect waves-light btn disabled">APPLY</a>
+			</div>
+		</div>
+
+	<script src="./tmp/scripts.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	</body>
+</html>
